@@ -1,15 +1,18 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import HeaderMain from '../components/HeaderMain';
-import Main from '../components/Main'
+import SearchBoxMain from '../components/SearchBoxMain';
+import PopularList from '../components/PopularList';
+import { VideoProvider } from '../VideoContext';
 
-function Home ({videoList, getVideoList}) {
+function Home () {
   return (
-      <>
+      <VideoProvider>
           <HeaderMain />
-          <Main videoList={videoList} getVideoList={getVideoList} />
+          <SearchBoxMain />
+          <PopularList />
           <Footer />
-      </>
+      </VideoProvider>
   );
 }
 

@@ -1,10 +1,16 @@
 import React from 'react';
+import Footer from '../components/Footer';
+import HeaderSub from '../components/HeaderSub';
+import SearchList from '../components/SearchList';
+import { VideoProvider } from '../VideoContext';
 
 function Search () {
   return (
-      <div>
-          Search
-      </div>
+      <VideoProvider>
+          <HeaderSub />
+          <SearchList />
+          <Footer />
+      </VideoProvider>
   );
 }
 
