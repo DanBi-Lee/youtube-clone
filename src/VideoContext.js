@@ -13,7 +13,7 @@ function videoReducer(state, action){
         case "getPopular" :
             return {...state, videoList : { ...state.videoList, search : action.list }};
         case "getSearch" :
-            return;
+            return {...state, videoList : { ...state.videoList, search : action.list }};
         default :
             throw new Error(`정의되지 않은 action 타입입니다 : ${action.type}`);
     }

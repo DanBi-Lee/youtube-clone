@@ -2,13 +2,16 @@ import React from 'react';
 import styles from './VideoList.module.css';
 import VideoItem from './VideoItem';
 
-function Main ({videoList, title}) {
+function VideoList ({videoList, title}) {
+    if(!videoList){
+        return <div>API오류</div>;
+    }
   return (
       <section className={styles.main}>
           <h1>{title}</h1>
           <ul className={styles.videolist}>
                 {
-                    videoList.map(item=> <VideoItem key={item.id} video={item} />)
+                    videoList.map(item=> <VideoItem key={item.etag} video={item} />)
                 }
                 {/* <li>
                     <img src="https://i.ytimg.com/vi/EjTJwEPPiCc/mqdefault.jpg" alt=""/>
@@ -19,4 +22,4 @@ function Main ({videoList, title}) {
   );
 }
 
-export default Main;
+export default VideoList;

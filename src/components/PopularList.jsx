@@ -11,7 +11,7 @@ function PopularList () {
             method: 'GET',
             redirect: 'manual'
           };
-          fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=24&regionCode=kr&key=AIzaSyCeZPZsKwxQDGej8O0x-qaaxbWo2_j28Ho", requestOptions)
+          fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=24&regionCode=kr&key=AIzaSyB9JUhtk7dNSNRlU3TwZdSInk-W3_dg_Ro", requestOptions)
             .then(response => response.json())
             .then(result => dispatch({type: 'getPopular', list: result.items}))
             .catch(error => console.log('error', error));
