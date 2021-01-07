@@ -1,4 +1,7 @@
 import React, { createContext, useContext, useReducer } from 'react';
+import Youtube from './service/youtube';
+export const youtube = new Youtube(process.env.REACT_APP_YOUTUBE_API_KEY);
+console.log(youtube.getRequestOptions);
 
 const initialVideos = {
     videoList : {

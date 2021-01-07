@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useVideoDispatch, useVideoState } from '../VideoContext';
+import { useVideoDispatch, useVideoState, youtube } from '../VideoContext';
 import VideoList from './VideoList';
 import qs from 'qs';
 
@@ -14,15 +14,7 @@ function SearchList () {
     const dispatch = useVideoDispatch();
 
     useEffect(()=>{
-      console.log('test');
-        const requestOptions = {
-            method: 'GET',
-            redirect: 'manual'
-          };
-          fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=24&q=${query.keyword}&key=AIzaSyB9JUhtk7dNSNRlU3TwZdSInk-W3_dg_Ro&type=video`, requestOptions)
-            .then(response => response.json())
-            .then(result => dispatch({type: "getSearch" , list: result.items}))
-            .catch(error => console.log('error', error));
+      youtube.search(query, dispatch);
     }, [query, dispatch]);
 
   return (
