@@ -4,13 +4,13 @@ import VideoList from './VideoList';
 
 function PopularList () {
     const dispatch = useVideoDispatch();
-    const {videoList : {search}} = useVideoState();
+    const {videoList : {popular}} = useVideoState();
     useEffect(()=>{
       youtube.mostPopular(dispatch);
     }, [dispatch]);
 
   return (
-    <VideoList videoList={search} title="인기 동영상" />
+    <VideoList videoList={popular} title="인기 동영상" />
   );
 }
 

@@ -14,7 +14,7 @@ const initialVideos = {
 function videoReducer(state, action){
     switch (action.type){
         case "getPopular" :
-            return {...state, videoList : { ...state.videoList, search : action.list }};
+            return {...state, videoList : { ...state.videoList, popular : action.list }};
         case "getSearch" :
             return {...state, videoList : { ...state.videoList, search : action.list }};
         default :
