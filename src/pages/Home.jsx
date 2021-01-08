@@ -3,16 +3,17 @@ import Footer from '../components/Footer';
 import HeaderMain from '../components/HeaderMain';
 import SearchBoxMain from '../components/SearchBoxMain';
 import PopularList from '../components/PopularList';
-import { VideoProvider } from '../VideoContext';
+import { Link } from 'react-router-dom';
 
 function Home () {
   return (
-      <VideoProvider>
+      <>
           <HeaderMain />
+          <Link to="./play" >테스트 코드</Link>
           <SearchBoxMain />
           <PopularList />
           <Footer />
-      </VideoProvider>
+      </>
   );
 }
 
