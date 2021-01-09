@@ -10,7 +10,7 @@ function App() {
     <VideoProvider>
       <Route path="/" component={Home} exact />
       <Route path="/search" component={Search} />
-      <Route path="/play" component={Play} />
+      <Route path="/play/:id" component={Play} />
     </VideoProvider>
   );
 }

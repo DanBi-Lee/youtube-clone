@@ -1,14 +1,13 @@
 import React, { createContext, useContext, useReducer } from 'react';
 import Youtube from './service/youtube';
 export const youtube = new Youtube(process.env.REACT_APP_YOUTUBE_API_KEY);
-console.log(youtube.getRequestOptions);
 
 const initialVideos = {
     videoList : {
         search : [],
         popular : []
     },
-    now_play : ''
+    now_play : null
 };
 
 function videoReducer(state, action){
@@ -17,6 +16,8 @@ function videoReducer(state, action){
             return {...state, videoList : { ...state.videoList, popular : action.list }};
         case "getSearch" :
             return {...state, videoList : { ...state.videoList, search : action.list }};
+        case "setVideo" :
+            return {...state, now_play : action.video};
         default :
             throw new Error(`정의되지 않은 action 타입입니다 : ${action.type}`);
     }

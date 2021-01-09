@@ -32,6 +32,17 @@ class Youtube {
       return console.log("error", error);
     }
   }
+  async getVideo(id, dispatch) {
+    try {
+      const response = await fetch(
+        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${this.key}`,
+        this.getRequestOptions
+      );
+      const result = await response.json();
+      return dispatch({ type: "setVideo", video: result.items[0] });
+    } catch (error) {
+      return console.log("error", error);
+    }
+  }
 }
-
 export default Youtube;

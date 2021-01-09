@@ -1,0 +1,32 @@
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.videoBox {
+    padding: 20px;
+    box-sizing: border-box;
+    flex : 1 1 70%;
+    width : 100%;
+}
+
+.videoBox + section {
+    flex : 1 1 30%;
+}
+
+.player {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.player iframe{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: none;
+}
+
+.title {
+    font-weight: 600;
+}
