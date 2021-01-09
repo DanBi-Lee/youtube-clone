@@ -5,7 +5,7 @@ function SearchInput () {
     const history = useHistory();
     const handleSearch = (e) => {
         e.preventDefault();
-        history.push(`./search?keyword=${searchInput.current.value}`);
+        history.push(`/search?keyword=${searchInput.current.value}`);
     };
     const searchInput = useRef();
 
